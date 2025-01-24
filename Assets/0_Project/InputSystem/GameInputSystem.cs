@@ -51,7 +51,7 @@ public partial class @GameInputSystem: IInputActionCollection2, IDisposable
                     ""name"": ""WASD"",
                     ""id"": ""33d2ca3f-e859-4e73-8e17-475810e4ba1a"",
                     ""path"": ""2DVector"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Movement"",
@@ -125,7 +125,7 @@ public partial class @GameInputSystem: IInputActionCollection2, IDisposable
                     ""id"": ""daa9bf5d-57d3-4995-a410-6118a5ea3614"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": true
                 },
                 {
