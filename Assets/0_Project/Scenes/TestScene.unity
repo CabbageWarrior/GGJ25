@@ -152,10 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c4d9e3748513343bc4c36c432af96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leaderboard:
-  - {fileID: 11400000, guid: 0e3061feb1acf7547b6e0f30e0bbd99d, type: 2}
-  - {fileID: 11400000, guid: 0e3061feb1acf7547b6e0f30e0bbd99d, type: 2}
-  - {fileID: 11400000, guid: 2b4f890e94cd2894b8d9e59f0017d166, type: 2}
+  leaderboard: []
 --- !u!4 &426072815
 Transform:
   m_ObjectHideFlags: 0
