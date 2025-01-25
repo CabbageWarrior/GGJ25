@@ -87,7 +87,7 @@ public class ScoreManager : MonoBehaviour
         {
             isGameInProgress = false;
 
-
+            Debug.Log(TotalScore);
 
             gameSelector.TriggerGameEnd();
         }
