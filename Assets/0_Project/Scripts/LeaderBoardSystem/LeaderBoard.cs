@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using System.Linq;
-// using TMPro;
+using TMPro;
 
 public class LeaderBoard : MonoBehaviour
 {
@@ -16,13 +16,12 @@ public class LeaderBoard : MonoBehaviour
     public bool multiPlayer;
     public string playerName;
     public int playerPoint;
-    // public TextMeshProUGUI b;
-    // public List<TextMeshProUGUI> pos = new List<TextMeshProUGUI>();
+    public List<TMP_Text> pos = new List<TMP_Text>();
 
     void Start()
     {
 
-        // LoadLeaderBoard(multiPlayer);
+        LoadLeaderBoard(multiPlayer);
 
     }
 
@@ -51,15 +50,14 @@ public class LeaderBoard : MonoBehaviour
 
         SaveLeaderBoard(isMulty);
 
-        // LoadUi();
+        LoadUi();
     }
     void LoadUi()
     {
-        for (int i = 0; i <= leaderboard.Count(); i++)
+        for (int i = 0; i < leaderboard.Count(); i++)
         {
-            Debug.Log("y");
-            ///string bob = $"{leaderboard[i].name}: {leaderboard[i].point.ToString()}";
-            // pos[i].text = bob;
+            string bob = $"{leaderboard[i].name}: {leaderboard[i].point}";
+            pos[i].text = bob;
         }
 
 
@@ -86,7 +84,7 @@ public class LeaderBoard : MonoBehaviour
         else
         {
             leaderboard = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Scores>>(jsonLeaderboard);
-            // LoadUi();
+            LoadUi();
         }
 
     }
