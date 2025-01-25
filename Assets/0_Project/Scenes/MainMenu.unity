@@ -313,8 +313,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Design:\n- Mattia Cecconello\n- Francesco Stoppa\n\nProgrammer:\n- Francesco
-    Stoppa\n\nConceptArt:\n-\n\n3D Artists:\n- \n\nSound Design:\n- Mattia Cecconello"
+  m_text: "Design:\n- Mattia Cecconello\n\nProgrammer:\n- Francesco Stoppa\n\nConceptArt:\n-\n\n3D
+    Artists:\n- \n\nSound Design:\n- Samuele Nicosia"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2955,6 +2955,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118522692787579802, guid: 6dc9fe8bd3879344e8f55a1c84307d90,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
