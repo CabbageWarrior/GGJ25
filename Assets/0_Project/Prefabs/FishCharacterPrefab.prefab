@@ -116,7 +116,7 @@ MonoBehaviour:
   playerNum: 0
   speed: 0.25
   maxSpeed: 2
-  jumpForce: 8
+  jumpForce: 1
   mesh1Pivot: {fileID: 278186146754970812}
   mesh2Pivot: {fileID: 285991899454168825}
   rb: {fileID: 0}
@@ -355,12 +355,12 @@ PrefabInstance:
     - target: {fileID: 193952949801099145, guid: 2524906f16ad1c64bb8fe47418ad0b87,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.0153
       objectReference: {fileID: 0}
     - target: {fileID: 193952949801099145, guid: 2524906f16ad1c64bb8fe47418ad0b87,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.1263
       objectReference: {fileID: 0}
     - target: {fileID: 193952949801099145, guid: 2524906f16ad1c64bb8fe47418ad0b87,
         type: 3}
