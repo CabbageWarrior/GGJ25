@@ -9,7 +9,7 @@ public class SpawnBubble : MonoBehaviour
     public float timer = 0.0f;
     public int step = 0;
     NormalBubble normalBubble;
-    void Explode()
+    public virtual void Explode()
     {
         if(spawner != null)
             spawner.ExploseBubble();
@@ -33,9 +33,6 @@ public class SpawnBubble : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            Grabbed();
-
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
@@ -43,15 +40,17 @@ public class SpawnBubble : MonoBehaviour
         }
     }
 
-    void Increse()
+    public virtual void Increse()
     {
         step++;
         timer = stepTimer;
         if (step >= 4)
             Explode();
         else
+        {
             if (normalBubble != null)
                 normalBubble.SetState(step);
+        }
         Debug.Log(step);
     }
 

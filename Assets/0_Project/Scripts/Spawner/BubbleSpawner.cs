@@ -9,7 +9,7 @@ public class BubbleSpawner : MonoBehaviour
     [SerializeField] float bubbleGbabed = 20.0f;
 
     public GameObject bubble;
-    bool occupato = true;
+    bool full = true;
 
     private void Start()
     {
@@ -18,20 +18,16 @@ public class BubbleSpawner : MonoBehaviour
     void Update()
     {
         bubbleTimer -= Time.deltaTime;
-        if(bubbleTimer <= 0 && !occupato)
+        if(bubbleTimer <= 0 && !full)
         {
             SpawnBubble();
         }
-
-
-
-        
     }
 
     public void GrabBubble()
     {
         bubbleTimer = bubbleGbabed;
-        occupato = false;
+        full = false;
         Debug.Log("Grabbed");
     }
 
@@ -41,13 +37,13 @@ public class BubbleSpawner : MonoBehaviour
         GameObject bubbleSpawned = Instantiate(bubble);
         bubbleSpawned.transform.position = transform.position;
         bubbleSpawned.GetComponent<SpawnBubble>().spawner = this; //b = this;
-        occupato = true;
+        full = true;
     }
     public void ExploseBubble()
     {
         Debug.Log("Bubble explode");
         bubbleTimer = bubbleExplode;
-        occupato = false;
+        full = false;
     }
 
 }
