@@ -9,14 +9,14 @@ public class SpecialBubble : BubbleBase
     [SerializeField] private Color heroineColor = Color.white;
     [SerializeField] private Color cosbyColor = Color.white;
     [SerializeField] private Color viagraColor = Color.white;
+    [Space]
+    [SerializeField] private List<Renderer> renderers;
 
     ESpecialBubble special = ESpecialBubble.Marijuana;
 
     public void SetSpecial(ESpecialBubble special)
     {
         this.special = special;
-
-        Renderer[] renderers = GetSphere().GetComponents<Renderer>();
 
         Color color = GetColor(special);
 
@@ -27,7 +27,9 @@ public class SpecialBubble : BubbleBase
 
             foreach (Material mat in mats)
             {
-                mat.color = color;
+                var currColor = mat.GetColor("_BaseColor");
+                color.a = currColor.a;
+                mat.SetColor("_BaseColor", color);
             }
         }
     }

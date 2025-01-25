@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 974330150993836044}
   m_Layer: 0
   m_Name: SpawnedSpecialBubble
-  m_TagString: SpawnedBubble
+  m_TagString: SpawnedSpecialBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,6 +171,10 @@ MonoBehaviour:
   heroineColor: {r: 0.90548396, g: 1, b: 0, a: 1}
   cosbyColor: {r: 1, g: 0.3600092, b: 0, a: 1}
   viagraColor: {r: 0, g: 0.05740881, b: 1, a: 1}
+  renderers:
+  - {fileID: 8872906959455736953}
+  - {fileID: 3575273533775559658}
+  - {fileID: 2477387664238227133}
 --- !u!1001 &2764218376437802862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -301,6 +305,12 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.07688429
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &3575273533775559658 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: cd16aca906812524094ae75295eb0f18,
+    type: 3}
+  m_PrefabInstance: {fileID: 2764218376437802862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3864342835284685369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -398,6 +408,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2258473582020546490}
   m_SourcePrefab: {fileID: 100100000, guid: cd16aca906812524094ae75295eb0f18, type: 3}
+--- !u!23 &2477387664238227133 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: cd16aca906812524094ae75295eb0f18,
+    type: 3}
+  m_PrefabInstance: {fileID: 3864342835284685369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3614805180530644434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cd16aca906812524094ae75295eb0f18,
@@ -538,6 +554,12 @@ SphereCollider:
 --- !u!4 &7739938448788467478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cd16aca906812524094ae75295eb0f18,
+    type: 3}
+  m_PrefabInstance: {fileID: 7846238669287573757}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8872906959455736953 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: cd16aca906812524094ae75295eb0f18,
     type: 3}
   m_PrefabInstance: {fileID: 7846238669287573757}
   m_PrefabAsset: {fileID: 0}
