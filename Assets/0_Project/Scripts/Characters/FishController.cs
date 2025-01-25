@@ -196,7 +196,7 @@ public class FishController : MonoBehaviour
                     break;
             }
 
-            //spawnSpecialBubble.ExplodeSpecial();
+            spawnSpecialBubble.Explode();
         }
     }
 }
