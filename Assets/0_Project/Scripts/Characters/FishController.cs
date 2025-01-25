@@ -153,4 +153,19 @@ public class FishController : MonoBehaviour
 
         bubble.SetState(state);
     }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Collider collider = collision.collider;
+
+        if (collider.CompareTag("SpawnedBubble"))
+        {
+            SpawnBubble spawnBubble = collider.GetComponentInChildren<SpawnBubble>();
+            if (spawnBubble)
+            {
+                SetBubbleState(spawnBubble.step);
+            }
+        }
+    }
 }
