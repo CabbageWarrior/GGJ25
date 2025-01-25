@@ -21,6 +21,7 @@ public class FishController : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float speed = 1f;
+    [SerializeField] private float maxSpeed = 1f;
     [SerializeField] private float jumpForce = 1f;
 
     [Header("References")]
@@ -101,12 +102,19 @@ public class FishController : MonoBehaviour
 
         Vector2 axisInput = value;
 
-        float horizontalInput = axisInput.x;
-        float forwardInput = axisInput.y;
+        //float horizontalInput = axisInput.x;
+        //float forwardInput = axisInput.y;
 
-        Vector3 vel = new Vector3(horizontalInput, 0f, forwardInput).normalized * speed;
-        vel.y = rb.velocity.y;
-        rb.velocity = vel;
+        //Vector3 vel = new Vector3(horizontalInput, 0f, forwardInput).normalized * speed;
+        //vel.y = rb.velocity.y;
+        //rb.velocity = vel;
+
+        //rb.AddForce(new Vector3(axisInput.x, 0f, axisInput.y) * speed - rb.velocity, ForceMode.VelocityChange);
+        rb.AddForce(new Vector3(axisInput.x, 0f, axisInput.y) * speed, ForceMode.VelocityChange);
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+
+        rb.MoveRotation(Quaternion.LookRotation(rb.velocity));
+        rb.angularVelocity = new Vector3(0f, rb.angularVelocity.y, 0f);
     }
     private void Jump_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {

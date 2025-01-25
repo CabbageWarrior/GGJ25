@@ -113,7 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNum: 0
-  speed: 5
+  speed: 0.25
+  maxSpeed: 2
   jumpForce: 8
   mesh1Pivot: {fileID: 278186146754970812}
   mesh2Pivot: {fileID: 285991899454168825}
