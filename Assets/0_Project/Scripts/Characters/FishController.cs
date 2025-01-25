@@ -23,6 +23,7 @@ public class FishController : MonoBehaviour
     [SerializeField] private float speed = 1f;
     [SerializeField] private float maxSpeed = 1f;
     [SerializeField] private float jumpForce = 1f;
+    [SerializeField] private float blinkTime = 2f;
 
     [Header("References")]
     [SerializeField] private GameObject mesh1Pivot = null;
@@ -31,6 +32,8 @@ public class FishController : MonoBehaviour
     [SerializeField] private Rigidbody rb = null;
     [Space]
     [SerializeField] private NormalBubble bubble = null;
+    [Space]
+    [SerializeField] private List<Renderer> renderers = new List<Renderer>();
 
     #endregion
 
@@ -39,6 +42,10 @@ public class FishController : MonoBehaviour
     private bool jumpWait = false;
 
     private int bubbleState = 0;
+
+    private bool isImmune = false;
+
+    private ScoreManager sm;
 
     private void Awake()
     {
@@ -57,6 +64,8 @@ public class FishController : MonoBehaviour
 
     private void Start()
     {
+        sm = FindObjectOfType<ScoreManager>();
+
         if (playerNum == EPlayerNum.One)
         {
             input.Player1.Movement.performed += Movement_performed;
@@ -207,6 +216,58 @@ public class FishController : MonoBehaviour
                 nest.AddBubble(bubbleState);
                 SetBubbleState(0);
             }
+        }
+        else if (collider.CompareTag("Stabby"))
+        {
+            SetHit();
+        }
+        else if (collider.CompareTag("Deadly"))
+        {
+            SetCatHit();
+        }
+    }
+
+    private void SetHit()
+    {
+        if (!isImmune)
+        {
+            sm.AddHit();
+            SetImmune();
+        }
+
+    }
+    private void SetCatHit()
+    {
+        if (!isImmune)
+        {
+            sm.AddCatHit();
+            SetImmune();
+        }
+
+    }
+
+    private void SetImmune()
+    {
+        isImmune = true;
+
+        StartCoroutine(Co());
+
+        IEnumerator Co()
+        {
+            var timer = 0f;
+            while (timer < blinkTime)
+            {
+                foreach (var item in renderers)
+                {
+                    item.enabled = !item.enabled;
+                }
+                yield return null;
+            }
+            foreach (var item in renderers)
+            {
+                item.enabled = true;
+            }
+            isImmune = false;
         }
     }
 }
