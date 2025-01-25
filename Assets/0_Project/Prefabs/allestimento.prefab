@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4811439623074180545}
   m_Layer: 0
   m_Name: allestimento
-  m_TagString: Untagged
+  m_TagString: Deadly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -733,6 +733,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FBX_CoralsRedSpikey (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7164254264470088221, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: stabby
+      objectReference: {fileID: 0}
     - target: {fileID: 7505068352417656999, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -826,6 +831,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FBX_CoralsRedSpikey (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164254264470088221, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: stabby
       objectReference: {fileID: 0}
     - target: {fileID: 7505068352417656999, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
         type: 3}
@@ -999,6 +1009,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FBX_CoralsRedSpikey (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164254264470088221, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: stabby
       objectReference: {fileID: 0}
     - target: {fileID: 7505068352417656999, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
         type: 3}
@@ -1183,6 +1198,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FBX_CoralsRedSpikey (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7164254264470088221, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: stabby
+      objectReference: {fileID: 0}
     - target: {fileID: 7505068352417656999, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1280,7 +1300,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4656fa5011984e244b9a30a43f867cf9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.43
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4656fa5011984e244b9a30a43f867cf9,
         type: 3}
@@ -2300,6 +2320,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FBX_CoralsRedSpikey (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7164254264470088221, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: stabby
+      objectReference: {fileID: 0}
     - target: {fileID: 7505068352417656999, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2394,6 +2419,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FBX_CoralsRedSpikey (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7164254264470088221, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: stabby
+      objectReference: {fileID: 0}
     - target: {fileID: 7505068352417656999, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2477,6 +2507,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FBX_CoralsRedSpikey
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164254264470088221, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: stabby
       objectReference: {fileID: 0}
     - target: {fileID: 7505068352417656999, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
         type: 3}
@@ -3897,6 +3932,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FBX_CoralsRedSpikey (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7164254264470088221, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: stabby
+      objectReference: {fileID: 0}
     - target: {fileID: 7505068352417656999, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4519,6 +4559,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FBX_CoralsRedSpikey (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7164254264470088221, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: stabby
+      objectReference: {fileID: 0}
     - target: {fileID: 7505068352417656999, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4724,6 +4769,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FBX_CoralsRedSpikey (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164254264470088221, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: stabby
       objectReference: {fileID: 0}
     - target: {fileID: 7505068352417656999, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
         type: 3}
@@ -5483,6 +5533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FBX_CoralsRedSpikey (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164254264470088221, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
+        type: 3}
+      propertyPath: m_TagString
+      value: stabby
       objectReference: {fileID: 0}
     - target: {fileID: 7505068352417656999, guid: 3c1561eafd950ed4a8d17db7cbbe67d3,
         type: 3}

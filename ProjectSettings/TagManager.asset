@@ -9,6 +9,7 @@ TagManager:
   - SpawnedSpecialBubble
   - Nest
   - Deadly
+  - stabby
   layers:
   - Default
   - TransparentFX
