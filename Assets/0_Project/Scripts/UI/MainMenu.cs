@@ -58,7 +58,7 @@ public class MainMenu : MonoBehaviour
         // esc pause
         Time.timeScale = 1;
         Interaction();
-
+        Debug.Log("Yoo");
         audioManager.TogglePauseAll();
 
     }
