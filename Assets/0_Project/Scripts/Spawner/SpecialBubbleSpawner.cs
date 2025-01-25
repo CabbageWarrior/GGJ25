@@ -25,7 +25,6 @@ public class SpecialBubbleSpawner : MonoBehaviour
 
     void SpawnBubble()
     {
-        Debug.Log("New bubble");
         GameObject bubbleSpawned = Instantiate(bubble);
         bubbleSpawned.transform.position = transform.position;
         bubbleSpawned.GetComponent<SpawnSpecialBubble>().bob = this;
@@ -33,7 +32,6 @@ public class SpecialBubbleSpawner : MonoBehaviour
     }
     public void ExploseBubble()
     {
-        Debug.Log("Bubble explode");
         timer = spawnTimer;
         full = false;
     }

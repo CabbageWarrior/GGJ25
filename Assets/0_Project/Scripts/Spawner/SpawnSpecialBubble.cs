@@ -10,7 +10,8 @@ public class SpawnSpecialBubble : SpawnBubble
         sb = GetComponent<SpecialBubble>();
         SetSpecialBubbleType();
         sb.SetSpecial(specialState);
-        Increse();
+        timer = RandomSpawn();
+
     }
     private void Update()
     {
@@ -38,10 +39,11 @@ public class SpawnSpecialBubble : SpawnBubble
         Destroy(this.gameObject);
 
     }
+
     public override void Increse()
     {
         step++;
-        timer = stepTimer;
+        timer = RandomSpawn();
 
         if (step >= 4)
             Explode();
@@ -51,6 +53,5 @@ public class SpawnSpecialBubble : SpawnBubble
                 sb.SetState(step);
         }
 
-        Debug.Log(step);
     }
 }

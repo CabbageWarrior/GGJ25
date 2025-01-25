@@ -33,7 +33,6 @@ public class BubbleSpawner : MonoBehaviour
 
     void SpawnBubble()
     {
-        Debug.Log("New bubble");
         GameObject bubbleSpawned = Instantiate(bubble);
         bubbleSpawned.transform.position = transform.position;
         bubbleSpawned.GetComponent<SpawnBubble>().spawner = this; //b = this;

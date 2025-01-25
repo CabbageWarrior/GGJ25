@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnBubble : MonoBehaviour
 {
     public BubbleSpawner spawner;
-    public float stepTimer = 4.0f;
+    public Vector2 stepTimer = new Vector2(3.5f, 7.5f);
     public float timer = 0.0f;
     public int step = 0;
     NormalBubble normalBubble;
@@ -28,7 +28,7 @@ public class SpawnBubble : MonoBehaviour
     private void Start()
     {
         normalBubble = GetComponent<NormalBubble>();
-        Increse();
+        timer = RandomSpawn();
     }
 
     private void Update()
@@ -39,11 +39,14 @@ public class SpawnBubble : MonoBehaviour
             Increse();
         }
     }
-
+    public virtual float RandomSpawn()
+    {
+        return Random.Range(stepTimer.x, stepTimer.y);
+    }
     public virtual void Increse()
     {
         step++;
-        timer = stepTimer;
+        timer = RandomSpawn();
         if (step >= 4)
             Explode();
         else
@@ -51,7 +54,6 @@ public class SpawnBubble : MonoBehaviour
             if (normalBubble != null)
                 normalBubble.SetState(step);
         }
-        Debug.Log(step);
     }
 
 }

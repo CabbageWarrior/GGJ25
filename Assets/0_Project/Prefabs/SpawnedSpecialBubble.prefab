@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
-  stepTimer: 4
+  stepTimer: {x: 4.5, y: 7.5}
   timer: 0
   step: 0
   specialState: 0
