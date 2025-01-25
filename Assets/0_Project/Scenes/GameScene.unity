@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 1666440501}
-  clampX: {x: -3.6, y: 3.7}
+  clampX: {x: -3.6, y: 3.9}
 --- !u!1001 &837131338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 1666440501}
-  clampX: {x: -1, y: 1}
+  clampX: {x: -2.3, y: 2.6}
 --- !u!1001 &1222111484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fish: {fileID: 118341905}
-  clampX: {x: -3.6, y: 3.7}
+  clampX: {x: -3.6, y: 3.9}
 --- !u!1 &1346223455
 GameObject:
   m_ObjectHideFlags: 0
