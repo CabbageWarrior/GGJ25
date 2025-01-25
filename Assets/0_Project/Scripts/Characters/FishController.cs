@@ -160,14 +160,13 @@ public class FishController : MonoBehaviour
         bubble.SetState(state);
     }
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        Collider collider = collision.collider;
+        Debug.Log("TRIGGER!!! " + collider.gameObject.name, collider.gameObject);
 
         if (collider.CompareTag("SpawnedBubble"))
         {
-            SpawnBubble spawnBubble = collider.GetComponentInChildren<SpawnBubble>();
+            SpawnBubble spawnBubble = collider.GetComponentInParent<SpawnBubble>();
             if (spawnBubble)
             {
                 SetBubbleState(spawnBubble.step);
@@ -176,7 +175,7 @@ public class FishController : MonoBehaviour
         }
         else if (collider.CompareTag("SpawnedSpecialBubble"))
         {
-            SpawnSpecialBubble spawnSpecialBubble = collider.GetComponentInChildren<SpawnSpecialBubble>();
+            SpawnSpecialBubble spawnSpecialBubble = collider.GetComponentInParent<SpawnSpecialBubble>();
             
             ESpecialBubble specialState = spawnSpecialBubble.specialState;
 
