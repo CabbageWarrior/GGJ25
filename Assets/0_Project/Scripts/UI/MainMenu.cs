@@ -28,12 +28,12 @@ public class MainMenu : MonoBehaviour
     public void Play(bool multi)
     {
         // scenemanager
-        /*
+        
         if (multi)
-            SessionInfo.IsMultiplayer = true; <-- multy
+            SessionInfo.IsMultiplayer = true; // <-- multy
         else
             SessionInfo.IsMultiplayer = false;
-        */
+        
         SceneManager.LoadScene(1);
         audioManager.Sfx_Game_Ost();
         audioManager.Sfx_Menu_PlayGame();
@@ -58,7 +58,7 @@ public class MainMenu : MonoBehaviour
         // esc pause
         Time.timeScale = 1;
         Interaction();
-
+        Debug.Log("Yoo");
         audioManager.TogglePauseAll();
 
     }
