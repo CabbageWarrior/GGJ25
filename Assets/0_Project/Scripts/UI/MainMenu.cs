@@ -16,6 +16,15 @@ public class MainMenu : MonoBehaviour
         if (audioManager != null)
             audioManager.Sfx_Game_Menu();
     }
+    public void OnMouseOverSound()
+    {
+        audioManager.Sfx_Menu_MouseOver();
+    }
+
+    public void Interaction()
+    {
+        audioManager.Sfx_Menu_Interaction();
+    }
     public void Play(bool multi)
     {
         // scenemanager
@@ -27,6 +36,8 @@ public class MainMenu : MonoBehaviour
         */
         SceneManager.LoadScene(1);
         audioManager.Sfx_Game_Ost();
+        audioManager.Sfx_Menu_PlayGame();
+
 
     }
     public void Quit()
@@ -40,26 +51,38 @@ public class MainMenu : MonoBehaviour
         // enter pause
         Time.timeScale = 0;
         audioManager.TogglePauseAll();
+        Interaction();
     }
     public void PauseEsc()
     {
         // esc pause
         Time.timeScale = 1;
+        Interaction();
+
         audioManager.TogglePauseAll();
+
     }
     public void SoundOnOff()
     {
         audioManager.Sound_On_Off();
+        Interaction();
+
+
     }
     public void SfxOnOff()
     {
         audioManager.SFX_On_Off();
+        Interaction();
+
+
     }
 
     public void EnterMainMenu()
     {
         SceneManager.LoadScene(0);
         audioManager.Sfx_Game_Ost();
+        Interaction();
+
     }
 
 }
