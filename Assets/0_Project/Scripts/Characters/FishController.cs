@@ -142,4 +142,6 @@ public class FishController : MonoBehaviour
             jumpWait = true;
         }
     }
+
+
 }
