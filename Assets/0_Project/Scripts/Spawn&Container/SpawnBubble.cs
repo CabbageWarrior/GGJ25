@@ -8,7 +8,7 @@ public class SpawnBubble : MonoBehaviour
     public float stepTimer = 4.0f;
     public float timer = 0.0f;
     public int step = 0;
-    // BubbleBase bubbleBase;
+    NormalBubble normalBubble;
     void Explode()
     {
         if(spawner != null)
@@ -26,7 +26,7 @@ public class SpawnBubble : MonoBehaviour
     private void Start()
     {
         Increse();
-        // bubbleBase = GetComponent<BubbleBase>();
+        normalBubble = GetComponent<NormalBubble>();
     }
 
     private void Update()
@@ -46,12 +46,10 @@ public class SpawnBubble : MonoBehaviour
         step++;
         timer = stepTimer;
         if (step >= 4)
-            Explode();/*
+            Explode();
         else
-            {
-                if (bubbleBase != null)
-                    SetState(step);
-            }*/
+            if (normalBubble != null)
+                normalBubble.SetState(step);
         Debug.Log(step);
     }
 
