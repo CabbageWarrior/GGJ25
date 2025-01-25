@@ -159,7 +159,7 @@ MonoBehaviour:
   cameraMulti1: {fileID: 793446944}
   cameraMulti2: {fileID: 1307768937}
   pauseMenu: {fileID: 28988429}
-  gameEndCanvas: {fileID: 0}
+  gameEndCanvas: {fileID: 1912602533}
   forceMulti: 0
 --- !u!4 &28988428
 Transform:
@@ -1586,6 +1586,12 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1912602533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 178342775849997707, guid: 125ba2cbe3aff58438352530226844ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 5027222179237281535}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2006261981
 PrefabInstance:
   m_ObjectHideFlags: 0
