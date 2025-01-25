@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 193952949801099145}
   - component: {fileID: 7972007673504960237}
   m_Layer: 0
-  m_Name: NormalBubble
+  m_Name: NormalBubbleForFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
