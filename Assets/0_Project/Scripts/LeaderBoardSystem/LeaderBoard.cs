@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using System.Linq;
+// using TMPro;
 
 public class LeaderBoard : MonoBehaviour
 {
@@ -15,11 +16,14 @@ public class LeaderBoard : MonoBehaviour
     public bool multiPlayer;
     public string playerName;
     public int playerPoint;
+    // public TextMeshProUGUI b;
+    // public List<TextMeshProUGUI> pos = new List<TextMeshProUGUI>();
 
     void Start()
     {
 
-        LoadLeaderBoard(multiPlayer);
+        // LoadLeaderBoard(multiPlayer);
+
     }
 
     private void Update()
@@ -42,9 +46,23 @@ public class LeaderBoard : MonoBehaviour
     {
         leaderboard.Add(score);
         leaderboard = leaderboard.OrderByDescending(x=>x.point).ToList();
-        if(leaderboard.Count > 10 )
-            leaderboard.RemoveAt(10);
+        if(leaderboard.Count > 6)
+            leaderboard.RemoveAt(6);
+
         SaveLeaderBoard(isMulty);
+
+        // LoadUi();
+    }
+    void LoadUi()
+    {
+        for (int i = 0; i <= leaderboard.Count(); i++)
+        {
+            Debug.Log("y");
+            ///string bob = $"{leaderboard[i].name}: {leaderboard[i].point.ToString()}";
+            // pos[i].text = bob;
+        }
+
+
     }
     void LoadLeaderBoard(bool isMulty)
     {
@@ -66,7 +84,10 @@ public class LeaderBoard : MonoBehaviour
                 jsonLeaderboard = PlayerPrefs.GetString(PREF_SCORES_MULTI, newLeaderboard);
         }
         else
+        {
             leaderboard = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Scores>>(jsonLeaderboard);
+            // LoadUi();
+        }
 
     }
     void SaveLeaderBoard(bool isMulty)

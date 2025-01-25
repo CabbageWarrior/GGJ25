@@ -54,7 +54,7 @@ public class AudioManager : MonoBehaviour
         }
     }
     #endregion
-
+    /*
     #region Game
     [Header("Game")]
     [Tooltip("You have to drag this sound to the AudioSource in Loop")]
@@ -75,8 +75,8 @@ public class AudioManager : MonoBehaviour
         menuBackground.Play();
     }
 
-    public void Sfx_Game_End() => sfx_source.PlayOneShot(sfx_game_end);
-
+    // public void Sfx_Game_End() => sfx_source.PlayOneShot(sfx_game_end);
+    /*
     public void Sfx_Play_Bulle()
     {
         if(sfx_game_bubble != null)
@@ -84,7 +84,7 @@ public class AudioManager : MonoBehaviour
             sfx_source.clip = sfx_game_bubble;
             sfx_source.Play();
         }
-    }
+    }*/
 
 
     /*public void Sfx_Stop_Bubble()
@@ -92,7 +92,7 @@ public class AudioManager : MonoBehaviour
         if (sfx_source.isPlaying)
             sfx_source.Stop();
     }*/
-    #endregion
+    // #endregion
 
     public void TogglePauseAll()
     {

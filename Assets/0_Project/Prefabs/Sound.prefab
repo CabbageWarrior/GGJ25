@@ -45,7 +45,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 9c9100bddcec4d540921f83dea5b199a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -146,7 +146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5293193956721754947
 Transform:
   m_ObjectHideFlags: 0
@@ -180,15 +180,9 @@ MonoBehaviour:
   inGameBackground: {fileID: 302308431468648581}
   menuBackground: {fileID: 1148412936060392708}
   bob: {fileID: 24300002, guid: aa930cc084f0fbe4f8c1ce388b5bb57b, type: 2}
-  muteSound: 0
-  sfx_menu_soundmenu: {fileID: 0}
-  sfx_menu_interaction: {fileID: 0}
-  sfx_menu_playGame: {fileID: 0}
-  sfx_game_uicard: {fileID: 0}
-  sfx_menu_closinggame: {fileID: 0}
-  sfx_menu_closeMenu: {fileID: 0}
-  sfx_game_end: {fileID: 0}
-  sfx_game_bubble: {fileID: 0}
+  sfx_menu_gameStart: {fileID: 8300000, guid: 787a1ecd50e0d464980d76f07d27f222, type: 3}
+  sfx_menu_mouseClick: {fileID: 8300000, guid: 431cd72864e536b4eb653d35c4358cda, type: 3}
+  sfx_game_mouseHover: {fileID: 8300000, guid: 0ca00ac0bf1ca204baf2e9fc7bfe1640, type: 3}
 --- !u!82 &9118522692787579802
 AudioSource:
   m_ObjectHideFlags: 0

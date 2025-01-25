@@ -1922,6 +1922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b6c0bf3e5163c4db8caa0bb630dd3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iconCover: {fileID: 0}
 --- !u!1 &719234287
 GameObject:
   m_ObjectHideFlags: 0
@@ -4106,6 +4107,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674965443753385487, guid: 6dc9fe8bd3879344e8f55a1c84307d90,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5293193956721754947, guid: 6dc9fe8bd3879344e8f55a1c84307d90,
         type: 3}
