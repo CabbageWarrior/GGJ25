@@ -5,5 +5,5 @@
     Heroine, // Yellow
     Cosby, // Orange
     // TBD
-    Viagra
+    Viagra // Blue
 }

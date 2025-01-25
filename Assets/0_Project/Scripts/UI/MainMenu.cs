@@ -6,18 +6,17 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     AudioManager audioManager;
-
+    public GameObject iconCover;
+    bool muteSound = false;
     // if (partita da continare) all'Awake() controllare le player pref e mod il play_text con Continue
     void Start()
     {
         audioManager = AudioManager.Instance;
 
-        // play track
-        if (audioManager != null)
-            audioManager.Sfx_Game_Menu();
     }
     public void OnMouseOverSound()
     {
+        if(audioManager != null)
         audioManager.Sfx_Menu_MouseOver();
     }
 
@@ -64,9 +63,20 @@ public class MainMenu : MonoBehaviour
     }
     public void SoundOnOff()
     {
+        audioManager.SFX_On_Off();
         audioManager.Sound_On_Off();
         Interaction();
 
+        if (!muteSound && iconCover != null)
+        {
+            iconCover.SetActive(true);
+            muteSound = true;
+        }
+        else
+        {
+            iconCover.SetActive(false);
+            muteSound = false;
+        }
 
     }
     public void SfxOnOff()
