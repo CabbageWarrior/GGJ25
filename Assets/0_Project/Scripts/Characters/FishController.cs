@@ -29,12 +29,16 @@ public class FishController : MonoBehaviour
     [SerializeField] private GameObject mesh2Pivot = null;
     [Space]
     [SerializeField] private Rigidbody rb = null;
+    [Space]
+    [SerializeField] private NormalBubble bubble = null;
 
     #endregion
 
     private GameInputSystem input;
     private bool isGrounded = true;
     private bool jumpWait = false;
+
+    private int bubbleState = 0;
 
     private void Awake()
     {
@@ -143,5 +147,10 @@ public class FishController : MonoBehaviour
         }
     }
 
+    private void SetBubbleState(int state)
+    {
+        bubbleState = state;
 
+        bubble.SetState(state);
+    }
 }
