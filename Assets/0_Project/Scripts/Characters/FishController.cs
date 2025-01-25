@@ -99,6 +99,9 @@ public class FishController : MonoBehaviour
     }
     private void Move(Vector2 value)
     {
+        if (Time.timeScale == 0f)
+            return;
+
         if (value.sqrMagnitude == 0f)
         {
             return;
@@ -122,6 +125,9 @@ public class FishController : MonoBehaviour
     }
     private void Jump_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
+        if (Time.timeScale == 0f)
+            return;
+
         if (obj.ReadValueAsButton() && Grounded())
         {
             Vector3 vel = rb.velocity;

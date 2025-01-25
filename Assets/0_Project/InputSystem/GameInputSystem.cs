@@ -206,6 +206,34 @@ public partial class @GameInputSystem: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Common"",
+            ""id"": ""e6ba4444-ce82-459e-8835-c1bdb019b5eb"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""29040055-931c-49a4-9f7a-45e6a737b149"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ca1854ff-db99-41ae-89ad-751e96ef23de"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -218,12 +246,16 @@ public partial class @GameInputSystem: IInputActionCollection2, IDisposable
         m_Player2 = asset.FindActionMap("Player 2", throwIfNotFound: true);
         m_Player2_Movement = m_Player2.FindAction("Movement", throwIfNotFound: true);
         m_Player2_Jump = m_Player2.FindAction("Jump", throwIfNotFound: true);
+        // Common
+        m_Common = asset.FindActionMap("Common", throwIfNotFound: true);
+        m_Common_Pause = m_Common.FindAction("Pause", throwIfNotFound: true);
     }
 
     ~@GameInputSystem()
     {
         UnityEngine.Debug.Assert(!m_Player1.enabled, "This will cause a leak and performance issues, GameInputSystem.Player1.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Player2.enabled, "This will cause a leak and performance issues, GameInputSystem.Player2.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Common.enabled, "This will cause a leak and performance issues, GameInputSystem.Common.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -389,6 +421,52 @@ public partial class @GameInputSystem: IInputActionCollection2, IDisposable
         }
     }
     public Player2Actions @Player2 => new Player2Actions(this);
+
+    // Common
+    private readonly InputActionMap m_Common;
+    private List<ICommonActions> m_CommonActionsCallbackInterfaces = new List<ICommonActions>();
+    private readonly InputAction m_Common_Pause;
+    public struct CommonActions
+    {
+        private @GameInputSystem m_Wrapper;
+        public CommonActions(@GameInputSystem wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pause => m_Wrapper.m_Common_Pause;
+        public InputActionMap Get() { return m_Wrapper.m_Common; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CommonActions set) { return set.Get(); }
+        public void AddCallbacks(ICommonActions instance)
+        {
+            if (instance == null || m_Wrapper.m_CommonActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_CommonActionsCallbackInterfaces.Add(instance);
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+        }
+
+        private void UnregisterCallbacks(ICommonActions instance)
+        {
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+        }
+
+        public void RemoveCallbacks(ICommonActions instance)
+        {
+            if (m_Wrapper.m_CommonActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ICommonActions instance)
+        {
+            foreach (var item in m_Wrapper.m_CommonActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_CommonActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public CommonActions @Common => new CommonActions(this);
     public interface IPlayer1Actions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -398,5 +476,9 @@ public partial class @GameInputSystem: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+    }
+    public interface ICommonActions
+    {
+        void OnPause(InputAction.CallbackContext context);
     }
 }
