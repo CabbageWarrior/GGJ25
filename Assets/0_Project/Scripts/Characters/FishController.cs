@@ -77,11 +77,29 @@ public class FishController : MonoBehaviour
             isGrounded = Grounded();
             jumpWait = false;
         }
+
+        if (playerNum == EPlayerNum.One)
+        {
+            Move(input.Player1.Movement.ReadValue<Vector2>());
+        }
+        else
+        {
+            Move(input.Player2.Movement.ReadValue<Vector2>());
+        }
     }
 
     private void Movement_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        Vector2 axisInput = obj.ReadValue<Vector2>();
+        Move(obj.ReadValue<Vector2>());
+    }
+    private void Move(Vector2 value)
+    {
+        if (value.sqrMagnitude == 0f)
+        {
+            return;
+        }
+
+        Vector2 axisInput = value;
 
         float horizontalInput = axisInput.x;
         float forwardInput = axisInput.y;
