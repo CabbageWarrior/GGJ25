@@ -5,7 +5,7 @@ public class SpawnSpecialBubble : SpawnBubble
     public ESpecialBubble specialState = ESpecialBubble.Marijuana;
     public SpecialBubbleSpawner bob;
     public SpecialBubble sb;
-        private void Start()
+    private void Start()
     {
         sb = GetComponent<SpecialBubble>();
         SetSpecialBubbleType();
@@ -30,7 +30,8 @@ public class SpawnSpecialBubble : SpawnBubble
 
     public void SetSpecialBubbleType()
     {
-        specialState = (ESpecialBubble)UnityEngine.Random.Range(0, 5);
+        bob.currentColorIndex = UnityEngine.Random.Range(0, 5);
+        specialState = (ESpecialBubble)bob.currentColorIndex;
     }
 
     public override void Explode()
