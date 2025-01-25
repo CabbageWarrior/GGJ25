@@ -166,17 +166,20 @@ public class FishController : MonoBehaviour
 
         if (collider.CompareTag("SpawnedBubble"))
         {
-            SpawnBubble spawnBubble = collider.GetComponentInParent<SpawnBubble>();
-            if (spawnBubble)
+            if (bubbleState == 0)
             {
-                SetBubbleState(spawnBubble.step);
-                spawnBubble.Grabbed();
+                SpawnBubble spawnBubble = collider.GetComponentInParent<SpawnBubble>();
+                if (spawnBubble)
+                {
+                    SetBubbleState(spawnBubble.step);
+                    spawnBubble.Grabbed();
+                }
             }
         }
         else if (collider.CompareTag("SpawnedSpecialBubble"))
         {
             SpawnSpecialBubble spawnSpecialBubble = collider.GetComponentInParent<SpawnSpecialBubble>();
-            
+
             ESpecialBubble specialState = spawnSpecialBubble.specialState;
 
             switch (specialState)
@@ -196,6 +199,16 @@ public class FishController : MonoBehaviour
             }
 
             spawnSpecialBubble.Explode();
+        }
+        else if (collider.CompareTag("Nest"))
+        {
+            if (bubbleState != 0)
+            {
+                NestController nest = collider.GetComponentInParent<NestController>();
+
+                nest.AddBubble(bubbleState);
+                SetBubbleState(0);
+            }
         }
     }
 }
