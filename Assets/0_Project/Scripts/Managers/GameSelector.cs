@@ -8,6 +8,9 @@ public class GameSelector : MonoBehaviour
     [SerializeField] private GameObject cameraSingle;
     [SerializeField] private GameObject cameraMulti1;
     [SerializeField] private GameObject cameraMulti2;
+    [Space]
+    [SerializeField] private PauseMenu pauseMenu;
+    [SerializeField] private GameObject gameEndCanvas;
 
 #if UNITY_EDITOR
     [Space]
@@ -28,5 +31,15 @@ public class GameSelector : MonoBehaviour
         cameraSingle.SetActive(!SessionInfo.IsMultiplayer);
         cameraMulti1.SetActive(SessionInfo.IsMultiplayer);
         cameraMulti2.SetActive(SessionInfo.IsMultiplayer);
+    }
+
+    public void TriggerGameEnd()
+    {
+        pauseMenu.enabled = false;
+
+        fish1.GetComponent<FishController>().enabled = false;
+        fish2.GetComponent<FishController>().enabled = false;
+
+        gameEndCanvas.SetActive(true);
     }
 }
