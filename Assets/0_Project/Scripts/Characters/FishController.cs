@@ -171,6 +171,35 @@ public class FishController : MonoBehaviour
             if (spawnBubble)
             {
                 SetBubbleState(spawnBubble.step);
+                spawnBubble.Grabbed();
+            }
+        }
+        else if (collider.CompareTag("SpawnedSpecialBubble"))
+        {
+            SpawnSpecialBubble spawnSpecialBubble = collider.GetComponentInChildren<SpawnSpecialBubble>();
+            
+            ESpecialBubble specialState = spawnSpecialBubble.specialState;
+
+            switch (specialState)
+            {
+                case ESpecialBubble.Marijuana:
+                    break;
+                case ESpecialBubble.Alcohol:
+                    break;
+                case ESpecialBubble.Heroine:
+                    break;
+                case ESpecialBubble.Cosby:
+                    break;
+                case ESpecialBubble.Viagra:
+                    break;
+                default:
+                    break;
+            }
+
+
+            if (spawnSpecialBubble)
+            {
+                SetBubbleState(spawnSpecialBubble.step);
             }
         }
     }
