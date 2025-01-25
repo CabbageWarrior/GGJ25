@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BubbleBase : MonoBehaviour
+public abstract class BubbleBase : MonoBehaviour
 {
     [SerializeField] private GameObject smallGO;
     [SerializeField] private GameObject midGO;
