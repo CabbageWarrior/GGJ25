@@ -21,12 +21,14 @@ public class SpawnBubble : MonoBehaviour
     {
         if (spawner != null)
             spawner.GrabBubble();
+
+        Destroy(this.gameObject);
     }
 
     private void Start()
     {
-        Increse();
         normalBubble = GetComponent<NormalBubble>();
+        Increse();
     }
 
     private void Update()
