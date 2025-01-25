@@ -162,8 +162,6 @@ public class FishController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("TRIGGER!!! " + collider.gameObject.name, collider.gameObject);
-
         if (collider.CompareTag("SpawnedBubble"))
         {
             if (bubbleState == 0)

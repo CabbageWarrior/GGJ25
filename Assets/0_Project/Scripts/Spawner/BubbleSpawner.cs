@@ -7,6 +7,7 @@ public class BubbleSpawner : MonoBehaviour
     public float bubbleTimer;
     [SerializeField] float bubbleExplode = 3.0f;
     [SerializeField] float bubbleGbabed = 20.0f;
+    [SerializeField] ParticleSystem particle;
 
     public GameObject bubble;
     bool full = true;
@@ -28,7 +29,6 @@ public class BubbleSpawner : MonoBehaviour
     {
         bubbleTimer = bubbleGbabed;
         full = false;
-        Debug.Log("Grabbed");
     }
 
     void SpawnBubble()
@@ -42,6 +42,7 @@ public class BubbleSpawner : MonoBehaviour
     {
         bubbleTimer = bubbleExplode;
         full = false;
+        particle.Play();
     }
 
 }

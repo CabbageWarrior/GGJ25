@@ -9,6 +9,10 @@ public class SpecialBubbleSpawner : MonoBehaviour
     bool full = true;
     public GameObject bubble;
 
+    public List<ParticleSystem> particles;
+
+    public int currentColorIndex = 0;
+
     private void Start()
     {
         SpawnBubble();
@@ -34,6 +38,8 @@ public class SpecialBubbleSpawner : MonoBehaviour
     {
         timer = spawnTimer;
         full = false;
+
+        particles[currentColorIndex].Play();
     }
 
 }
