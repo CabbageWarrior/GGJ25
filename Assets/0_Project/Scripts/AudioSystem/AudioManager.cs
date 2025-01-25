@@ -1,13 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Rendering;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; } // Singelton
     [SerializeField] AudioSource sfx_source;
     [Tooltip("This AudioSource must have a Loop")]
-    [SerializeField] AudioSource background;
+    [SerializeField] AudioSource inGameBackground;
+    [SerializeField] AudioSource menuBackground;
+    [SerializeField] AudioMixerGroup bob;
+
+
+    bool muteSfx;
+    bool muteSound;
+
+    #region Menu
+    [Header("Menu")]
+    [Tooltip("You have to drag this sound to another GameObject with the AudioSource in Loop")]
+    [SerializeField] AudioClip sfx_menu_soundmenu;
+    [SerializeField] AudioClip sfx_menu_interaction;
+    [SerializeField] AudioClip sfx_menu_playGame;
+    [SerializeField] AudioClip sfx_game_uicard;
+    [SerializeField] AudioClip sfx_menu_closinggame;
+    [SerializeField] AudioClip sfx_menu_closeMenu;
+    
+    public void Sfx_Menu_Interaction() => sfx_source.PlayOneShot(sfx_menu_interaction);
+    public void Sfx_Menu_PlayGame() => sfx_source.PlayOneShot(sfx_menu_playGame);
+    public void Sfx_Menu_ClosingGame() => sfx_source.PlayOneShot(sfx_menu_closinggame);
+    public void Sfx_Menu_CloseMenu() => sfx_source.PlayOneShot(sfx_menu_closeMenu);
+
+    public void SFX_On_Off()
+    {
+        if (!muteSfx)
+        {
+            sfx_source.volume = 0;
+            muteSfx = true;
+        }
+        else
+        {
+            sfx_source.volume = 1;
+            muteSfx = false;
+        }
+    }
+    public void Sound_On_Off()
+    {
+        if (!muteSound)
+        {
+            inGameBackground.volume = 0;
+            menuBackground.volume = 0;
+            muteSound = true;
+        }
+        else
+        {
+            inGameBackground.volume = 1;
+            menuBackground.volume = 1;
+            muteSound = false;
+        }
+    }
+    #endregion
 
     #region Game
     [Header("Game")]
@@ -16,10 +69,21 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] AudioClip sfx_game_bubble;
 
-    public void Sfx_Game_Ost() => background.Play();
+    public void Sfx_Game_Ost()
+    {
+        if (menuBackground.isPlaying)
+            menuBackground.Stop();
+        inGameBackground.Play();
+    }
+    public void Sfx_Game_Menu()
+    {
+        if (inGameBackground.isPlaying)
+            inGameBackground.Stop();
+        menuBackground.Play();
+    }
+
     public void Sfx_Game_End() => sfx_source.PlayOneShot(sfx_game_end);
 
-    // Dialogues
     public void Sfx_Play_Bulle()
     {
         if(sfx_game_bubble != null)
@@ -28,12 +92,28 @@ public class AudioManager : MonoBehaviour
             sfx_source.Play();
         }
     }
-    public void Sfx_Stop_Bubble()
+
+
+    /*public void Sfx_Stop_Bubble()
     {
         if (sfx_source.isPlaying)
             sfx_source.Stop();
-    }
+    }*/
     #endregion
+
+    public void TogglePauseAll()
+    {
+        if (inGameBackground.isPlaying)
+        {
+            sfx_source.Pause();
+            inGameBackground.Pause();
+        }
+        else
+        {
+            sfx_source.UnPause();
+            inGameBackground.UnPause();
+        }
+    }
     void Awake()
     {
         #region Singleton
@@ -44,6 +124,7 @@ public class AudioManager : MonoBehaviour
         else
         {
             Instance = this;
+            DontDestroyOnLoad(this); // check if it usefull
         }
         #endregion
     }

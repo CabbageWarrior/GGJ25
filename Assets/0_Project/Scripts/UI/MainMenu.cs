@@ -14,12 +14,19 @@ public class MainMenu : MonoBehaviour
 
         // play track
         if (audioManager != null)
-            audioManager.Sfx_Game_Ost();
+            audioManager.Sfx_Game_Menu();
     }
-    public void Play()
+    public void Play(bool multi)
     {
         // scenemanager
+        /*
+        if (multi)
+            SessionInfo.IsMultiplayer = true; <-- multy
+        else
+            SessionInfo.IsMultiplayer = false;
+        */
         SceneManager.LoadScene(1);
+        audioManager.Sfx_Game_Ost();
 
     }
     public void Quit()
@@ -27,4 +34,32 @@ public class MainMenu : MonoBehaviour
         // add save
         Application.Quit();
     }
+
+    public void PauseEnter()
+    {
+        // enter pause
+        Time.timeScale = 0;
+        audioManager.TogglePauseAll();
+    }
+    public void PauseEsc()
+    {
+        // esc pause
+        Time.timeScale = 1;
+        audioManager.TogglePauseAll();
+    }
+    public void SoundOnOff()
+    {
+        audioManager.Sound_On_Off();
+    }
+    public void SfxOnOff()
+    {
+        audioManager.SFX_On_Off();
+    }
+
+    public void EnterMainMenu()
+    {
+        SceneManager.LoadScene(0);
+        audioManager.Sfx_Game_Ost();
+    }
+
 }
