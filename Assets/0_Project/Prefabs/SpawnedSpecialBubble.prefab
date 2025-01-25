@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2350645097352921908}
   m_Layer: 0
   m_Name: Mid
-  m_TagString: SpawnedBubble
+  m_TagString: SpawnedSpecialBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4917083033151434615}
   m_Layer: 0
   m_Name: Small
-  m_TagString: SpawnedBubble
+  m_TagString: SpawnedSpecialBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 8447237695519990528}
   m_Layer: 0
   m_Name: Big
-  m_TagString: SpawnedBubble
+  m_TagString: SpawnedSpecialBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,7 +261,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cd16aca906812524094ae75295eb0f18,
         type: 3}
       propertyPath: m_TagString
-      value: SpawnedBubble
+      value: SpawnedSpecialBubble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -397,7 +397,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cd16aca906812524094ae75295eb0f18,
         type: 3}
       propertyPath: m_TagString
-      value: SpawnedBubble
+      value: SpawnedSpecialBubble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -513,7 +513,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cd16aca906812524094ae75295eb0f18,
         type: 3}
       propertyPath: m_TagString
-      value: SpawnedBubble
+      value: SpawnedSpecialBubble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

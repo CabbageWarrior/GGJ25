@@ -29,7 +29,6 @@ public class BubbleSpawner : MonoBehaviour
     {
         bubbleTimer = bubbleGbabed;
         full = false;
-        Debug.Log("Grabbed");
     }
 
     void SpawnBubble()
@@ -41,7 +40,6 @@ public class BubbleSpawner : MonoBehaviour
     }
     public void ExploseBubble()
     {
-        Debug.Log("Bubble explode");
         bubbleTimer = bubbleExplode;
         full = false;
         particle.Play();
