@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - SpawnedBubble
+  - SpawnedSpecialBubble
   layers:
   - Default
   - TransparentFX
