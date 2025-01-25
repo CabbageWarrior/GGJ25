@@ -15,11 +15,6 @@ public class SpawnSpecialBubble : SpawnBubble
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-
-            bob.ExploseBubble();
-
-
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
