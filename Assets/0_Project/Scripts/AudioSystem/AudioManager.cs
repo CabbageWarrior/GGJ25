@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.Rendering;
 
 public class AudioManager : MonoBehaviour
 {
@@ -20,17 +17,13 @@ public class AudioManager : MonoBehaviour
     #region Menu
     [Header("Menu")]
     [Tooltip("You have to drag this sound to another GameObject with the AudioSource in Loop")]
-    [SerializeField] AudioClip sfx_menu_soundmenu;
-    [SerializeField] AudioClip sfx_menu_interaction;
-    [SerializeField] AudioClip sfx_menu_playGame;
-    [SerializeField] AudioClip sfx_game_uicard;
-    [SerializeField] AudioClip sfx_menu_closinggame;
-    [SerializeField] AudioClip sfx_menu_closeMenu;
+    [SerializeField] AudioClip sfx_menu_gameStart;
+    [SerializeField] AudioClip sfx_menu_mouseClick;
+    [SerializeField] AudioClip sfx_game_mouseHover;
     
-    public void Sfx_Menu_Interaction() => sfx_source.PlayOneShot(sfx_menu_interaction);
-    public void Sfx_Menu_PlayGame() => sfx_source.PlayOneShot(sfx_menu_playGame);
-    public void Sfx_Menu_ClosingGame() => sfx_source.PlayOneShot(sfx_menu_closinggame);
-    public void Sfx_Menu_CloseMenu() => sfx_source.PlayOneShot(sfx_menu_closeMenu);
+    public void Sfx_Menu_Interaction() => sfx_source.PlayOneShot(sfx_menu_mouseClick);
+    public void Sfx_Menu_PlayGame() => sfx_source.PlayOneShot(sfx_menu_gameStart);
+    public void Sfx_Menu_MouseOver() => sfx_source.PlayOneShot(sfx_game_mouseHover);
 
     public void SFX_On_Off()
     {
