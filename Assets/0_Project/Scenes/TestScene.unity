@@ -153,6 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leaderboard: []
+  multiPlayer: 1
+  playerName: bob e Marley
+  playerPoint: 1
 --- !u!4 &426072815
 Transform:
   m_ObjectHideFlags: 0

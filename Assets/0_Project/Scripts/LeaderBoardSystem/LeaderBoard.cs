@@ -3,56 +3,80 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using System.Linq;
 
 public class LeaderBoard : MonoBehaviour
 {
-    private const string PREF_SCORES = "scores";
-
+    private const string PREF_SCORES_SINGLE = "scores";
+    private const string PREF_SCORES_MULTI = "scoresMulti";
     public List<Scores> leaderboard = new List<Scores>();
     Scores score;
 
+    public bool multiPlayer;
+    public string playerName;
+    public int playerPoint;
+
     void Start()
     {
-        LoadLeaderBoard();
+
+        LoadLeaderBoard(multiPlayer);
     }
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            score = new Scores();
-            score.name = "Bob";
-            score.score = 0;
-            UpdateLeaderBoard();
+            SetScore(multiPlayer, playerName, playerPoint);
         }
     }
 
-    void UpdateLeaderBoard()
+    public void SetScore(bool isMulti, string name, int points)
+    {
+        score = new Scores();
+        score.name = playerName;
+        score.point = playerPoint;
+        UpdateLeaderBoard(isMulti);
+    }
+
+    void UpdateLeaderBoard(bool isMulty)
     {
         leaderboard.Add(score);
-
-
-        // check player e posiziona nel caso cambia posizione
-        // cancella oltre il 10
-        SaveLeaderBoard();
+        leaderboard = leaderboard.OrderByDescending(x=>x.point).ToList();
+        if(leaderboard.Count > 10 )
+            leaderboard.RemoveAt(10);
+        SaveLeaderBoard(isMulty);
     }
-    void LoadLeaderBoard()
+    void LoadLeaderBoard(bool isMulty)
     {
-        string jsonLeaderboard = PlayerPrefs.GetString(PREF_SCORES, null);
+        string jsonLeaderboard;
+
+        if(!isMulty)
+            jsonLeaderboard = PlayerPrefs.GetString(PREF_SCORES_SINGLE, null);
+        else
+            jsonLeaderboard = PlayerPrefs.GetString(PREF_SCORES_MULTI, null);
+
         if (string.IsNullOrEmpty(jsonLeaderboard))
         {
             leaderboard = new List<Scores>();
-            string newLeaderboard = JsonUtility.ToJson(leaderboard);
-            PlayerPrefs.SetString(PREF_SCORES, newLeaderboard);
+            string newLeaderboard = Newtonsoft.Json.JsonConvert.SerializeObject(leaderboard);
+
+            if (!isMulty)
+                jsonLeaderboard = PlayerPrefs.GetString(PREF_SCORES_SINGLE, newLeaderboard);
+            else
+                jsonLeaderboard = PlayerPrefs.GetString(PREF_SCORES_MULTI, newLeaderboard);
         }
         else
-            leaderboard = JsonUtility.FromJson<List<Scores>>(jsonLeaderboard);
+            leaderboard = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Scores>>(jsonLeaderboard);
+
     }
-    void SaveLeaderBoard()
+    void SaveLeaderBoard(bool isMulty)
     {
-        string newLeaderboard = JsonUtility.ToJson(leaderboard);
+        string newLeaderboard = Newtonsoft.Json.JsonConvert.SerializeObject(leaderboard);
         Debug.Log(newLeaderboard);
-        PlayerPrefs.SetString(PREF_SCORES, newLeaderboard);
+        if (!isMulty)
+            PlayerPrefs.SetString(PREF_SCORES_SINGLE, newLeaderboard);
+        else
+            PlayerPrefs.SetString(PREF_SCORES_MULTI, newLeaderboard);
         PlayerPrefs.Save();
     }
 }

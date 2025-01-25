@@ -7,5 +7,6 @@ using UnityEngine;
 public class Scores
 {
     public string name;
-    public int score;
+    public int point;
 }
+
