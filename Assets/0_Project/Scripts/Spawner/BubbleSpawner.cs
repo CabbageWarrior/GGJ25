@@ -40,7 +40,6 @@ public class BubbleSpawner : MonoBehaviour
     }
     public void ExploseBubble()
     {
-        Debug.Log("Bubble explode");
         bubbleTimer = bubbleExplode;
         full = false;
     }
