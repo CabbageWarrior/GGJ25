@@ -10,6 +10,7 @@ public class GameSelector : MonoBehaviour
     [SerializeField] private GameObject cameraMulti2;
     [Space]
     [SerializeField] private PauseMenu pauseMenu;
+    [SerializeField] private GameObject gameEndCanvas;
 
 #if UNITY_EDITOR
     [Space]
@@ -38,5 +39,7 @@ public class GameSelector : MonoBehaviour
 
         fish1.GetComponent<FishController>().enabled = false;
         fish2.GetComponent<FishController>().enabled = false;
+
+        gameEndCanvas.SetActive(true);
     }
 }
