@@ -44,6 +44,8 @@ public class ScoreCalculator : MonoBehaviour
             pos[i].text = bob;
         }
 
+        pos[3].text = $"{result[3]}s = x{multi[3]}";
+
         pos[6].text = $"{scoreManager.TotalScore}";
     }
 

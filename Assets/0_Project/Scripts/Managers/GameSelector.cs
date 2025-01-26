@@ -45,5 +45,7 @@ public class GameSelector : MonoBehaviour
         fish2.GetComponent<FishController>().enabled = false;
 
         gameEndCanvas.SetActive(true);
+
+        AudioManager.Instance.Sfx_Game_Win();
     }
 }

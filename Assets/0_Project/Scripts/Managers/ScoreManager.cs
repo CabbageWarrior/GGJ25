@@ -41,10 +41,10 @@ public class ScoreManager : MonoBehaviour
             // 60-89 => x1.5
             // 90-120 => x1
             // >120 => x0.5
-            if (gameTimer > 60f) return .5f;
-            if (gameTimer > 90f) return 1f;
-            if (gameTimer > 120f) return 1.5f;
-            return 2f;
+            if (gameTimer <= 60f) return 2f;
+            if (gameTimer <= 90f) return 1.5f;
+            if (gameTimer <= 120f) return 1f;
+            return 0.5f;
         }
     }
 
