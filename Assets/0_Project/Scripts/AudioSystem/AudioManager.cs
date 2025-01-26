@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -10,7 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource menuBackground;
     [SerializeField] AudioMixerGroup bob;
 
-    public AudioSource GetAudio() {  return sfx_source; }
+    public AudioSource GetAudio() { return sfx_source; }
     bool muteSfx;
     bool muteSound;
 
@@ -20,6 +21,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip sfx_menu_gameStart;
     [SerializeField] AudioClip sfx_menu_mouseClick;
     [SerializeField] AudioClip sfx_game_mouseHover;
+
+    [Header("Gameplay")]
+    [SerializeField] List<AudioClip> sfx_fish_place_bubble;
 
     [Header("Gameplay - End of match")]
     [SerializeField] AudioClip sfx_game_win;
@@ -31,10 +35,15 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip sfx_game_score_6;
     [SerializeField] AudioClip sfx_game_score_7;
 
+    // Menu
     public void Sfx_Menu_Interaction() => sfx_source.PlayOneShot(sfx_menu_mouseClick);
     public void Sfx_Menu_PlayGame() => sfx_source.PlayOneShot(sfx_menu_gameStart);
     public void Sfx_Menu_MouseOver() => sfx_source.PlayOneShot(sfx_game_mouseHover);
 
+    // Gameplay
+    public void Sfx_Game_Place_Bubble() => sfx_source.PlayOneShot(GetRandom(sfx_fish_place_bubble));
+
+    // Gameplay - End
     public void Sfx_Game_Win() => sfx_source.PlayOneShot(sfx_game_win);
     public void Sfx_Game_Score_1() => sfx_source.PlayOneShot(sfx_game_score_1);
     public void Sfx_Game_Score_2() => sfx_source.PlayOneShot(sfx_game_score_2);
@@ -100,5 +109,13 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(this); // check if it usefull
         }
         #endregion
+    }
+
+
+
+    private AudioClip GetRandom(List<AudioClip> list)
+    {
+        var index = UnityEngine.Random.Range(0, list.Count);
+        return list[index];
     }
 }
