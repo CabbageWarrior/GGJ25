@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         audioManager = AudioManager.Instance;
-        audioManager.Sfx_Menu_PlayGame();
+        audioManager.Track_Play_Menu();
 
         //icon logic
         if (iconCover != null)
@@ -50,11 +50,16 @@ public class MainMenu : MonoBehaviour
             SessionInfo.IsMultiplayer = false;
         
         SceneManager.LoadScene(1);
-
         if (audioManager != null)
         {
             audioManager.Track_Play_Ost();
+            audioManager.Sfx_Menu_PlayGame();
         }
+    }
+
+    public void WE()
+    {
+        audioManager.SFX_WE_Testa();
     }
     public void Quit()
     {

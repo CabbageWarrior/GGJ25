@@ -61,8 +61,13 @@ public class AudioManager : MonoBehaviour
     public void Sfx_Menu_PlayGame()
     {
         sfx_source.PlayOneShot(sfx_menu_gameStart);
+    }
+
+    public void SFX_WE_Testa()
+    {
         sfx_source2.PlayOneShot(GetRandom(sfx_game_intro_voice));
     }
+
     public void Sfx_Menu_Interaction() => sfx_source.PlayOneShot(sfx_menu_mouseClick);
     public void Sfx_Menu_MouseOver() => sfx_source.PlayOneShot(sfx_game_mouseHover);
 
@@ -147,11 +152,13 @@ public class AudioManager : MonoBehaviour
     {
         if (!muteSfx)
         {
+            sfx_source2.volume = 0;
             sfx_source.volume = 0;
             muteSfx = true;
         }
         else
         {
+            sfx_source2.volume = 1;
             sfx_source.volume = 1;
             muteSfx = false;
         }
@@ -167,7 +174,7 @@ public class AudioManager : MonoBehaviour
         else
         {
             inGameBackground.volume = 1;
-            menuBackground.volume = 1;
+            menuBackground.volume = 0.75f;
             muteSound = false;
         }
     }
