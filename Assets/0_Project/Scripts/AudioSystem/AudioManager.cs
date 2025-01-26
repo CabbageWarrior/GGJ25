@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource menuBackground;
     [SerializeField] AudioMixerGroup bob;
 
-
+    public AudioSource GetAudio() {  return sfx_source; }
     bool muteSfx;
     bool muteSound;
 

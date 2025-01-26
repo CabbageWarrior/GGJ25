@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e7359f1f572e5af4aa365c132437de6b
+guid: 9ed58eb05f99ad141a8f0e2b603cde5e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,42 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Mat_coralli
-    second: {fileID: 2100000, guid: d12ea4e523523f542aaba4c313106889, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: d12ea4e523523f542aaba4c313106889, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: d12ea4e523523f542aaba4c313106889, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.006
-    second: {fileID: 2100000, guid: d12ea4e523523f542aaba4c313106889, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.007
-    second: {fileID: 2100000, guid: d12ea4e523523f542aaba4c313106889, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.008
-    second: {fileID: 2100000, guid: d12ea4e523523f542aaba4c313106889, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.009
-    second: {fileID: 2100000, guid: d12ea4e523523f542aaba4c313106889, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.010
+      name: Material_Fish
     second: {fileID: 2100000, guid: d12ea4e523523f542aaba4c313106889, type: 2}
   materials:
     materialImportMode: 2
