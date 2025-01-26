@@ -27,7 +27,7 @@ public class LeaderBoard : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             SetScore(multiPlayer, playerName, playerPoint);
         }
@@ -35,20 +35,26 @@ public class LeaderBoard : MonoBehaviour
 
     public void SetScore(bool isMulti, string name, int points)
     {
+        // FIX for UI!
+        isMulti = false;
+
         score = new Scores();
         score.name = playerName;
         score.point = playerPoint;
         UpdateLeaderBoard(isMulti);
     }
 
-    void UpdateLeaderBoard(bool isMulty)
+    void UpdateLeaderBoard(bool isMulti)
     {
+        // FIX for UI!
+        isMulti = false;
+
         leaderboard.Add(score);
-        leaderboard = leaderboard.OrderByDescending(x=>x.point).ToList();
-        if(leaderboard.Count > 6)
+        leaderboard = leaderboard.OrderByDescending(x => x.point).ToList();
+        if (leaderboard.Count > 6)
             leaderboard.RemoveAt(6);
 
-        SaveLeaderBoard(isMulty);
+        SaveLeaderBoard(isMulti);
 
         LoadUi();
     }
@@ -62,21 +68,25 @@ public class LeaderBoard : MonoBehaviour
 
 
     }
-    void LoadLeaderBoard(bool isMulty)
+    void LoadLeaderBoard(bool isMulti)
     {
+        // FIX for UI!
+        isMulti = false;
+
         string jsonLeaderboard;
 
-        if(!isMulty)
+        if (!isMulti)
             jsonLeaderboard = PlayerPrefs.GetString(PREF_SCORES_SINGLE, null);
         else
             jsonLeaderboard = PlayerPrefs.GetString(PREF_SCORES_MULTI, null);
 
         if (string.IsNullOrEmpty(jsonLeaderboard))
         {
-            leaderboard = new List<Scores>();
+            //leaderboard = new List<Scores>();
+            SaveLeaderBoard(isMulti);
             string newLeaderboard = Newtonsoft.Json.JsonConvert.SerializeObject(leaderboard);
 
-            if (!isMulty)
+            if (!isMulti)
                 jsonLeaderboard = PlayerPrefs.GetString(PREF_SCORES_SINGLE, newLeaderboard);
             else
                 jsonLeaderboard = PlayerPrefs.GetString(PREF_SCORES_MULTI, newLeaderboard);
@@ -84,15 +94,18 @@ public class LeaderBoard : MonoBehaviour
         else
         {
             leaderboard = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Scores>>(jsonLeaderboard);
-            LoadUi();
         }
+        LoadUi();
 
     }
-    void SaveLeaderBoard(bool isMulty)
+    void SaveLeaderBoard(bool isMulti)
     {
+        // FIX for UI!
+        isMulti = false;
+
         string newLeaderboard = Newtonsoft.Json.JsonConvert.SerializeObject(leaderboard);
         Debug.Log(newLeaderboard);
-        if (!isMulty)
+        if (!isMulti)
             PlayerPrefs.SetString(PREF_SCORES_SINGLE, newLeaderboard);
         else
             PlayerPrefs.SetString(PREF_SCORES_MULTI, newLeaderboard);
