@@ -12,6 +12,22 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         audioManager = AudioManager.Instance;
+
+        //icon logic
+        if(iconCover != null)
+        {
+            AudioSource a = audioManager.GetAudio();
+            if (a.volume == 0)
+            {
+                iconCover.SetActive(true);
+                muteSound = true;
+            }
+            else
+            {
+                iconCover.SetActive(false);
+                muteSound = false;
+            }
+        }
     }
     public void OnMouseOverSound()
     {
