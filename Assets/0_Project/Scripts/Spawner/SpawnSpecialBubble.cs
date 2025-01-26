@@ -31,6 +31,9 @@ public class SpawnSpecialBubble : SpawnBubble
 
     public override void Explode()
     {
+
+        AudioManager.Instance.Sfx_Game_Bubble_Explode();
+
         bob.ExploseBubble();
         Destroy(this.gameObject);
 

@@ -11,7 +11,9 @@ public class SpawnBubble : MonoBehaviour
     NormalBubble normalBubble;
     public virtual void Explode()
     {
-        if(spawner != null)
+        AudioManager.Instance.Sfx_Game_Bubble_Explode();
+
+        if (spawner != null)
             spawner.ExploseBubble();
 
         Destroy(this.gameObject);
