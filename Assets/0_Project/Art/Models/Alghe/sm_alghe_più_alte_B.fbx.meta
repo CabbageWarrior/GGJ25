@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5877eda6b6ab84c4f80c5df3f87d8ae3
+guid: a7c47eb6e767d7b44a31cec211a7654b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,10 +7,10 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 89d9521b2297f244c810722f95b6d5f2, type: 2}
+      name: Mat_coralli 2.001
+    second: {fileID: 2100000, guid: d12ea4e523523f542aaba4c313106889, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -38,11 +38,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|ArmatureAction.001
-      takeName: Armature|ArmatureAction.001
-      internalID: -1422011007694221501
+      name: Arma_Algae|Anim_Algae_Idle
+      takeName: Arma_Algae|Anim_Algae_Idle
+      internalID: 1610798384598027898
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 47
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
