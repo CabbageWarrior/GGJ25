@@ -23,7 +23,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip sfx_game_mouseHover;
 
     [Header("Gameplay")]
-    [SerializeField] List<AudioClip> sfx_fish_place_bubble;
+    [SerializeField] List<AudioClip> sfx_fish_place_bubble_voice;
+    [SerializeField] List<AudioClip> sfx_fish_get_big_bubble_voice;
+    [SerializeField] List<AudioClip> sfx_fish_get_special_bubble_voice;
+    [SerializeField] List<AudioClip> sfx_fish_hit_voice;
+    [SerializeField] List<AudioClip> sfx_game_intro_voice;
 
     [Header("Gameplay - End of match")]
     [SerializeField] AudioClip sfx_game_win;
@@ -36,6 +40,47 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip sfx_game_score_7;
 
     // Menu
+    public void Sfx_Menu_Interaction() => sfx_source.PlayOneShot(sfx_menu_mouseClick);
+    public void Sfx_Menu_PlayGame() => sfx_source.PlayOneShot(sfx_menu_gameStart);
+    public void Sfx_Menu_MouseOver() => sfx_source.PlayOneShot(sfx_game_mouseHover);
+
+    // Gameplay
+    public void Sfx_Game_Place_Bubble()
+    {
+        sfx_source.PlayOneShot(GetRandom(sfx_fish_place_bubble_voice));
+    }
+    public void Sfx_Game_Get_Big_Bubble()
+    {
+        sfx_source.PlayOneShot(GetRandom(sfx_fish_get_big_bubble_voice));
+    }
+
+    public void Sfx_Game_Get_Special_Bubble()
+    {
+        sfx_source.PlayOneShot(GetRandom(sfx_fish_get_special_bubble_voice));
+    }
+
+    public void Sfx_Game_Fish_Hit()
+    {
+        sfx_source.PlayOneShot(GetRandom(sfx_fish_hit_voice));
+    }
+
+    public void Sfx_Game_Intro()
+    {
+        sfx_source.PlayOneShot(GetRandom(sfx_game_intro_voice));
+    }
+
+    // Gameplay - End
+    public void Sfx_Game_Win() => sfx_source.PlayOneShot(sfx_game_win);
+    public void Sfx_Game_Score_1() => sfx_source.PlayOneShot(sfx_game_score_1);
+    public void Sfx_Game_Score_2() => sfx_source.PlayOneShot(sfx_game_score_2);
+    public void Sfx_Game_Score_3() => sfx_source.PlayOneShot(sfx_game_score_3);
+    public void Sfx_Game_Score_4() => sfx_source.PlayOneShot(sfx_game_score_4);
+    public void Sfx_Game_Score_5() => sfx_source.PlayOneShot(sfx_game_score_5);
+    public void Sfx_Game_Score_6() => sfx_source.PlayOneShot(sfx_game_score_6);
+    public void Sfx_Game_Score_7() => sfx_source.PlayOneShot(sfx_game_score_7);
+
+
+
     public void Track_Play_Ost()
     {
         if (menuBackground.isPlaying)
@@ -48,24 +93,6 @@ public class AudioManager : MonoBehaviour
             inGameBackground.Stop();
         menuBackground.Play();
     }
-
-
-    public void Sfx_Menu_Interaction() => sfx_source.PlayOneShot(sfx_menu_mouseClick);
-    public void Sfx_Menu_PlayGame() => sfx_source.PlayOneShot(sfx_menu_gameStart);
-    public void Sfx_Menu_MouseOver() => sfx_source.PlayOneShot(sfx_game_mouseHover);
-
-    // Gameplay
-    public void Sfx_Game_Place_Bubble() => sfx_source.PlayOneShot(GetRandom(sfx_fish_place_bubble));
-
-    // Gameplay - End
-    public void Sfx_Game_Win() => sfx_source.PlayOneShot(sfx_game_win);
-    public void Sfx_Game_Score_1() => sfx_source.PlayOneShot(sfx_game_score_1);
-    public void Sfx_Game_Score_2() => sfx_source.PlayOneShot(sfx_game_score_2);
-    public void Sfx_Game_Score_3() => sfx_source.PlayOneShot(sfx_game_score_3);
-    public void Sfx_Game_Score_4() => sfx_source.PlayOneShot(sfx_game_score_4);
-    public void Sfx_Game_Score_5() => sfx_source.PlayOneShot(sfx_game_score_5);
-    public void Sfx_Game_Score_6() => sfx_source.PlayOneShot(sfx_game_score_6);
-    public void Sfx_Game_Score_7() => sfx_source.PlayOneShot(sfx_game_score_7);
 
     public void SFX_On_Off()
     {
