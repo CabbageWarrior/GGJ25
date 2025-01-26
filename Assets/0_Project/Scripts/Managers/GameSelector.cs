@@ -11,6 +11,8 @@ public class GameSelector : MonoBehaviour
     [Space]
     [SerializeField] private PauseMenu pauseMenu;
     [SerializeField] private GameObject gameEndCanvas;
+    [Space]
+    [SerializeField] private GameObject multiplayerSeparator;
 
 #if UNITY_EDITOR
     [Space]
@@ -31,6 +33,8 @@ public class GameSelector : MonoBehaviour
         cameraSingle.SetActive(!SessionInfo.IsMultiplayer);
         cameraMulti1.SetActive(SessionInfo.IsMultiplayer);
         cameraMulti2.SetActive(SessionInfo.IsMultiplayer);
+
+        multiplayerSeparator.SetActive(SessionInfo.IsMultiplayer);
     }
 
     public void TriggerGameEnd()
