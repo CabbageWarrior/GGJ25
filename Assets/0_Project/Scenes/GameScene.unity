@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -216,6 +216,12 @@ MonoBehaviour:
   - {fileID: 1163863275}
   - {fileID: 1842425815}
   - {fileID: 88975026}
+  gameTimer: 0
+  totalHits: 0
+  totalCatHits: 0
+  smallBubbleScores: 0
+  midBubbleScores: 0
+  bigBubbleScores: 0
 --- !u!114 &88975026 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7453724830747910178, guid: 3e5ee60d3952bbd4bbb3bdeb94a65446,
@@ -2769,6 +2775,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameEndCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 805588457535877814, guid: 125ba2cbe3aff58438352530226844ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532994730975290574, guid: 125ba2cbe3aff58438352530226844ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3267106455244131217, guid: 125ba2cbe3aff58438352530226844ef,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2873,12 +2889,23 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 28988429}
+      objectReference: {fileID: 5027222179237281536}
+    - target: {fileID: 8035327217949998606, guid: 125ba2cbe3aff58438352530226844ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 125ba2cbe3aff58438352530226844ef, type: 3}
+--- !u!1 &5027222179237281536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1532994730975290574, guid: 125ba2cbe3aff58438352530226844ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 5027222179237281535}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7974483580486591522
 PrefabInstance:
   m_ObjectHideFlags: 0

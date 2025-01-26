@@ -46,4 +46,9 @@ public class ScoreCalculator : MonoBehaviour
 
         pos[6].text = $"{scoreManager.TotalScore}";
     }
+
+    public float GetScoreTotal()
+    {
+        return scoreManager.TotalScore;
+    }
 }
