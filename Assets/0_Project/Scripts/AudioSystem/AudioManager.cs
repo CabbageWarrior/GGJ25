@@ -58,16 +58,15 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip sfx_game_score_7;
 
     // Menu
-    public void Sfx_Menu_PlayGame() => sfx_source.PlayOneShot(sfx_menu_gameStart);
+    public void Sfx_Menu_PlayGame()
+    {
+        sfx_source.PlayOneShot(sfx_menu_gameStart);
+        sfx_source2.PlayOneShot(GetRandom(sfx_game_intro_voice));
+    }
     public void Sfx_Menu_Interaction() => sfx_source.PlayOneShot(sfx_menu_mouseClick);
     public void Sfx_Menu_MouseOver() => sfx_source.PlayOneShot(sfx_game_mouseHover);
 
     // Gameplay
-    public void Sfx_Game_Intro()
-    {
-        sfx_source.PlayOneShot(GetRandom(sfx_game_intro_voice));
-    }
-
     public void Sfx_Game_Place_Bubble()
     {
         sfx_source.PlayOneShot(sfx_bubble_place);
