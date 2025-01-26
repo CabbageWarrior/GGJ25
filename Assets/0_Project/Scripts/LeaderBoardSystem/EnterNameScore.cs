@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.UI;
-using UnityEngine;
+
 using UnityEngine.UI;
+
+using UnityEngine;
 
 public class EnterNameScore : MonoBehaviour
 {
@@ -13,13 +14,10 @@ public class EnterNameScore : MonoBehaviour
     {
         if (inputField != null)
             playerName = inputField.text;
-        else
-            Debug.Log("PORCO DIO");
     }
 
     public string GetPlayerName()
     {
-        Debug.Log($"GetPlayerName: {playerName}");
 
         return playerName;  
     }
