@@ -20,7 +20,21 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip sfx_menu_gameStart;
     [SerializeField] AudioClip sfx_menu_mouseClick;
     [SerializeField] AudioClip sfx_game_mouseHover;
-    
+
+    public void Track_Play_Ost()
+    {
+        if (menuBackground.isPlaying)
+            menuBackground.Stop();
+        inGameBackground.Play();
+    }
+    public void Track_Play_Menu()
+    {
+        if (inGameBackground.isPlaying)
+            inGameBackground.Stop();
+        menuBackground.Play();
+    }
+
+
     public void Sfx_Menu_Interaction() => sfx_source.PlayOneShot(sfx_menu_mouseClick);
     public void Sfx_Menu_PlayGame() => sfx_source.PlayOneShot(sfx_menu_gameStart);
     public void Sfx_Menu_MouseOver() => sfx_source.PlayOneShot(sfx_game_mouseHover);
