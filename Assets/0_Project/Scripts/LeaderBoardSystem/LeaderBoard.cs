@@ -18,16 +18,17 @@ public class LeaderBoard : MonoBehaviour
     public int playerPoint;
     public List<TMP_Text> pos = new List<TMP_Text>();
 
+    public EnterNameScore enterNameScript;
+    public ScoreCalculator scoreCalculatorScript;
+
     void Start()
     {
-
         LoadLeaderBoard(multiPlayer);
-
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             SetScore(multiPlayer, playerName, playerPoint);
         }
@@ -39,17 +40,19 @@ public class LeaderBoard : MonoBehaviour
         isMulti = false;
 
         score = new Scores();
-        score.name = playerName;
-        score.point = playerPoint;
+        score.name = name;
+        score.point = points;
         UpdateLeaderBoard(isMulti);
     }
 
     void UpdateLeaderBoard(bool isMulti)
     {
+        leaderboard.RemoveAt(5);
+        leaderboard.Add(score);
+
         // FIX for UI!
         isMulti = false;
 
-        leaderboard.Add(score);
         leaderboard = leaderboard.OrderByDescending(x => x.point).ToList();
         if (leaderboard.Count > 6)
             leaderboard.RemoveAt(6);
@@ -97,6 +100,8 @@ public class LeaderBoard : MonoBehaviour
         }
         LoadUi();
 
+        if (enterNameScript != null && scoreCalculatorScript != null)
+            SetScore(false, enterNameScript.GetPlayerName(), (int)scoreCalculatorScript.GetScoreTotal());
     }
     void SaveLeaderBoard(bool isMulti)
     {
