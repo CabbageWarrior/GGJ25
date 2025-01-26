@@ -183,6 +183,14 @@ MonoBehaviour:
   sfx_menu_gameStart: {fileID: 8300000, guid: 787a1ecd50e0d464980d76f07d27f222, type: 3}
   sfx_menu_mouseClick: {fileID: 8300000, guid: 431cd72864e536b4eb653d35c4358cda, type: 3}
   sfx_game_mouseHover: {fileID: 8300000, guid: 0ca00ac0bf1ca204baf2e9fc7bfe1640, type: 3}
+  sfx_game_win: {fileID: 8300000, guid: 7c9bea1a3c7e0104a85556bfa247f51c, type: 3}
+  sfx_game_score_1: {fileID: 8300000, guid: c9f0f16a2f7310f44b57341226d7324e, type: 3}
+  sfx_game_score_2: {fileID: 8300000, guid: 41b913efde99c5745ae337271fac4463, type: 3}
+  sfx_game_score_3: {fileID: 8300000, guid: 4b39ee8a44d25ad46ac71e4b243670bf, type: 3}
+  sfx_game_score_4: {fileID: 8300000, guid: 95e28a2a82316b347a44e4f6339bb190, type: 3}
+  sfx_game_score_5: {fileID: 8300000, guid: 0f1a7d5ae3bce1d4eaf82c5151eccb1a, type: 3}
+  sfx_game_score_6: {fileID: 8300000, guid: e85ab9a10d10292498036aa0583c8665, type: 3}
+  sfx_game_score_7: {fileID: 8300000, guid: a1677cec3e80714418556f81efb3d60d, type: 3}
 --- !u!82 &9118522692787579802
 AudioSource:
   m_ObjectHideFlags: 0
