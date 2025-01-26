@@ -55,6 +55,11 @@ public class SpawnBubble : MonoBehaviour
         {
             if (normalBubble != null)
                 normalBubble.SetState(step);
+
+            if (step == 1)
+            { 
+                AudioManager.Instance.Sfx_Game_Bubble_Spawn();
+            }
         }
     }
 

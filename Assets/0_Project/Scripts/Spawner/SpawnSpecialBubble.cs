@@ -50,6 +50,11 @@ public class SpawnSpecialBubble : SpawnBubble
         {
             if (sb != null)
                 sb.SetState(step);
+
+            if (step == 1)
+            {
+                AudioManager.Instance.Sfx_Game_Bubble_Spawn();
+            }
         }
 
     }
