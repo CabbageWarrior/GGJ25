@@ -1342,6 +1342,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_CatPaw (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4656fa5011984e244b9a30a43f867cf9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Deadly
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
