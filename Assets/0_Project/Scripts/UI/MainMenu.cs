@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,8 +49,12 @@ public class MainMenu : MonoBehaviour
             SessionInfo.IsMultiplayer = false;
         
         SceneManager.LoadScene(1);
+
         if (audioManager != null)
+        {
             audioManager.Sfx_Menu_PlayGame();
+            audioManager.Track_Play_Ost();
+        }
     }
     public void Quit()
     {
@@ -97,6 +102,6 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         Interaction();
+        audioManager.Track_Play_Menu();
     }
-
 }
