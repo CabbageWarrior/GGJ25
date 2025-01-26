@@ -14,11 +14,11 @@ public class ScoreManager : MonoBehaviour
     bool isGameInProgress = true;
 
     float gameTimer = 0f;
-    int totalHits = 0;
-    int totalCatHits = 0;
-    int smallBubbleScores = 0;
-    int midBubbleScores = 0;
-    int bigBubbleScores = 0;
+    public int totalHits = 0;
+    public int totalCatHits = 0;
+    public int smallBubbleScores = 0;
+    public int midBubbleScores = 0;
+    public int bigBubbleScores = 0;
 
     const int SMALL_SCORE = 30;
     const int MID_SCORE = 70;
@@ -41,7 +41,7 @@ public class ScoreManager : MonoBehaviour
             // 60-89 => x1.5
             // 90-120 => x1
             // >120 => x0.5
-            if (gameTimer > 600f) return .5f;
+            if (gameTimer > 60f) return .5f;
             if (gameTimer > 90f) return 1f;
             if (gameTimer > 120f) return 1.5f;
             return 2f;
