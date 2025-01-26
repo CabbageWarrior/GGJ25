@@ -148,6 +148,8 @@ public class FishController : MonoBehaviour
 
             isGrounded = false;
             StartCoroutine(JumpFrameSkipRoutine());
+
+            AudioManager.Instance.Sfx_Game_Fish_Jump();
         }
     }
 
@@ -168,6 +170,15 @@ public class FishController : MonoBehaviour
     private void SetBubbleState(int state)
     {
         bubbleState = state;
+
+        if (bubbleState == 3)
+        {
+            AudioManager.Instance.Sfx_Game_Get_Big_Bubble();
+        }
+        else
+        {
+            AudioManager.Instance.Sfx_Game_Get_Bubble();
+        }
 
         bubble.SetState(state);
     }
@@ -208,6 +219,8 @@ public class FishController : MonoBehaviour
                     break;
             }
 
+            AudioManager.Instance.Sfx_Game_Get_Special_Bubble();
+
             spawnSpecialBubble.Explode();
         }
         else if (collider.CompareTag("Nest"))
@@ -215,6 +228,8 @@ public class FishController : MonoBehaviour
             if (bubbleState != 0)
             {
                 NestController nest = collider.GetComponentInParent<NestController>();
+
+                AudioManager.Instance.Sfx_Game_Place_Bubble();
 
                 nest.AddBubble(bubbleState);
                 SetBubbleState(0);
@@ -224,8 +239,6 @@ public class FishController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Collider collider = collision.collider;
-
-        Debug.Log("COLLIDED!!!!!!! " + collider.tag, collider.gameObject);
 
         if (collider.CompareTag("stabby"))
         {
@@ -241,6 +254,8 @@ public class FishController : MonoBehaviour
     {
         if (!isImmune)
         {
+            AudioManager.Instance.Sfx_Game_Fish_Hit();
+
             sm.AddHit();
             SetImmune();
         }
@@ -250,6 +265,8 @@ public class FishController : MonoBehaviour
     {
         if (!isImmune)
         {
+            AudioManager.Instance.Sfx_Game_Fish_Cat_Hit();
+
             sm.AddCatHit();
             SetImmune();
         }
