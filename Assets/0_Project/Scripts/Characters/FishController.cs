@@ -47,10 +47,13 @@ public class FishController : MonoBehaviour
 
     private ScoreManager sm;
 
+    private Animator anim;
+
     private void Awake()
     {
         input = new GameInputSystem();
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -256,6 +259,7 @@ public class FishController : MonoBehaviour
     private void SetImmune()
     {
         isImmune = true;
+        anim.SetBool("DoBlink", true);
 
         StartCoroutine(Co());
 
@@ -276,6 +280,7 @@ public class FishController : MonoBehaviour
                 item.enabled = true;
             }
             isImmune = false;
+            anim.SetBool("DoBlink", false);
         }
     }
 }
