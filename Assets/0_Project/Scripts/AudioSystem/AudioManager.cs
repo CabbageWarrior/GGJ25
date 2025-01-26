@@ -173,8 +173,8 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            inGameBackground.volume = 1;
-            menuBackground.volume = 0.75f;
+            inGameBackground.volume = 0.7f;
+            menuBackground.volume = 0.7f;
             muteSound = false;
         }
     }
