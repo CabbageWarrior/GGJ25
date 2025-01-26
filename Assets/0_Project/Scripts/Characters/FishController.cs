@@ -217,7 +217,14 @@ public class FishController : MonoBehaviour
                 SetBubbleState(0);
             }
         }
-        else if (collider.CompareTag("Stabby"))
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Collider collider = collision.collider;
+
+        Debug.Log("COLLIDED!!!!!!! " + collider.tag, collider.gameObject);
+
+        if (collider.CompareTag("stabby"))
         {
             SetHit();
         }
@@ -257,6 +264,7 @@ public class FishController : MonoBehaviour
             var timer = 0f;
             while (timer < blinkTime)
             {
+                timer += Time.deltaTime;
                 foreach (var item in renderers)
                 {
                     item.enabled = !item.enabled;
