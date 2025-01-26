@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
     // Score things
     bool isGameInProgress = true;
 
-    float gameTimer = 0f;
+    public float gameTimer = 0f;
     public int totalHits = 0;
     public int totalCatHits = 0;
     public int smallBubbleScores = 0;
