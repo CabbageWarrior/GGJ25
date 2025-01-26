@@ -13,9 +13,10 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         audioManager = AudioManager.Instance;
+        audioManager.Sfx_Menu_PlayGame();
 
         //icon logic
-        if(iconCover != null)
+        if (iconCover != null)
         {
             AudioSource a = audioManager.GetAudio();
             if (a.volume == 0)
@@ -52,7 +53,6 @@ public class MainMenu : MonoBehaviour
 
         if (audioManager != null)
         {
-            audioManager.Sfx_Menu_PlayGame();
             audioManager.Track_Play_Ost();
         }
     }
