@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
     [Space]
     [SerializeField] List<AudioClip> sfx_fish_hit_voice;
     [Space]
-    [SerializeField] AudioClip sfx_fish_jump;
+    [SerializeField] List<AudioClip> sfx_fish_jump;
     [SerializeField] AudioClip sfx_fish_hit;
     [SerializeField] AudioClip sfx_coral_hit;
     [SerializeField] AudioClip sfx_cat_hiss;
@@ -99,7 +99,7 @@ public class AudioManager : MonoBehaviour
 
     public void Sfx_Game_Fish_Jump()
     {
-        sfx_source2.PlayOneShot(sfx_fish_jump);
+        sfx_source2.PlayOneShot(GetRandom(sfx_fish_jump));
     }
     public void Sfx_Game_Fish_Hit()
     {
