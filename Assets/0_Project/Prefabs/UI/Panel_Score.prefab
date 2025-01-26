@@ -1046,7 +1046,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c4d9e3748513343bc4c36c432af96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leaderboard: []
+  leaderboard:
+  - name: Il Gianni
+    point: 1200
+  - name: La Piera
+    point: 1000
+  - name: L'Andrea
+    point: 800
+  - name: Fritz il Gatto
+    point: 666
+  - name: The Grrreat Team
+    point: 110
+  - name: Il Giargiana
+    point: 1
   multiPlayer: 0
   playerName: Fra
   playerPoint: 9
