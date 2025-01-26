@@ -18,6 +18,11 @@ public class CatTriggerer : MonoBehaviour
             dir.enabled = true;
 
             AudioManager.Instance.Sfx_Game_Cat_Hiss();
+
+            if (dir.time < 0.1f)
+            {
+                AudioManager.Instance.Sfx_Game_Cat_Paw();
+            }
         }
     }
 }
